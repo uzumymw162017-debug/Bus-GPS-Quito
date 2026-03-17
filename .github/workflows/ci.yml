@@ -1,0 +1,22 @@
+name: Validacion GPS Bus Quito
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar el código
+      uses: actions/checkout@v3
+      
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Ejecutar pruebas matemáticas
+      run: |
+        python calculo_velocidad.py
